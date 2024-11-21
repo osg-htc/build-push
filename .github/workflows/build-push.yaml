@@ -49,7 +49,7 @@ jobs:
       - name: Check HARBOR values
         id: check-harbor
         run: |
-          if [ -z "${{ secrets.HARBOR_CLI_SECRET }}" ] || [ -z "${{ vars.HARBOR_CLI_NAME }}" ]; then
+          if [ -z "${{ secrets.OSG_HARBOR_ROBOT_PASSWORD }}" ] || [ -z "${{ secrets.OSG_HARBOR_ROBOT_USER }}" ]; then
             echo "push=false" >> $GITHUB_ENV
           else
             echo "push=true" >> $GITHUB_ENV
