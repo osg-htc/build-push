@@ -60,8 +60,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: hub.opensciencegrid.org
-          username: ${{ vars.HARBOR_CLI_NAME }}
-          password: ${{ secrets.HARBOR_CLI_SECRET }}
+          username: ${{ secrets.OSG_HARBOR_ROBOT_USER }}
+          password: ${{ secrets.OSG_HARBOR_ROBOT_PASSWORD }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
